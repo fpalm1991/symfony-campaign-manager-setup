@@ -25,15 +25,18 @@ $db = new CampaignManager\CampaignManager\Database(
 
 $conn = $db->getConnection();
 
+if ($conn === null) {
+    throw new Exception("No database connection");
+}
+
 // Reset tables and insert test data
 $campaignData = new CampaignManager\CampaignManager\CampaignData();
 
 $result = $conn
-            ->resetData($campaignData->tables)
-            ->addPlatforms($campaignData->platforms)
-            ->addClients($campaignData->clients)
-            ->addUsers($campaignData->users)
-            ->evaluateResults()
-            ;
+    ->resetData($campaignData->tables)
+    ->addPlatforms($campaignData->platforms)
+    ->addClients($campaignData->clients)
+    ->addUsers($campaignData->users)
+    ->evaluateResults();
 
 echo $result;
