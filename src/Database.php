@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace CampaignManager\CampaignManager;
 
-use Error;
-
 final class Database
 {
     private \PDO $pdo;
