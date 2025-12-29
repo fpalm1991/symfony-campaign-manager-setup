@@ -23,16 +23,10 @@ $db = new CampaignManager\CampaignManager\Database(
     password: $_ENV['db_password']
 );
 
-$conn = $db->getConnection();
-
-if ($conn === null) {
-    throw new Exception("No database connection");
-}
-
 // Reset tables and insert test data
 $campaignData = new CampaignManager\CampaignManager\CampaignData();
 
-$result = $conn
+$result = $db
     ->resetData($campaignData->tables)
     ->addPlatforms($campaignData->platforms)
     ->addClients($campaignData->clients)

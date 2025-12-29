@@ -8,6 +8,9 @@ final class CampaignData
 {
     public private(set) array $tables = [
         [
+            'table' => 'campaign',
+        ],
+        [
             'table' => 'platform',
         ],
         [
