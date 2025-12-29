@@ -81,7 +81,7 @@ final class CampaignData
             'password' => 'password',
         ],
         [
-            'email' => 'campaign-owners@mail.com',
+            'email' => 'campaign-owner2@mail.com',
             'roles' => '["ROLE_USER", "ROLE_CAMPAIGN_OWNER"]',
             'password' => 'password',
         ],
